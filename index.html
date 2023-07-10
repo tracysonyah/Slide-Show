@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide show</title>
+</head>
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .image {
+        width: 550px;
+    }
+</style>
+<body>
+    <div class="images">
+        <img class="image hidden" src="./images/1.jpg" alt="img">
+        <img class="image hidden" src="./images/2.jpg" alt="img">
+        <img class="image hidden" src="./images/3.jpg" alt="img">
+        <img class="image hidden" src="./images/4.jpg" alt="img">
+        <img class="image hidden" src="./images/5.jpg" alt="img">
+    </div>
+    <script>
+        const images = document.querySelectorAll('.image');
+        images[0].classList.remove('hidden');
+
+        let index = 0;
+
+        setInterval(function() {
+            images[index].classList.add('hidden')
+
+            index++;
+
+            if(index === images.length) {
+                index = 0;
+            }
+
+            images[index].classList.remove('hidden')
+        }, 3000)
+    </script>
+</body>
+</html>
